@@ -58,7 +58,7 @@ export function PageComponent() {
             </Button>
           </Link>
 
-          <Link href="mailto:bugloper@gmail.com">
+          <Link href="mailto:bugloper@hey.com">
             <Button variant="outline" size="icon">
               <Mail className="h-4 w-4" />
               <span className="sr-only">Email</span>
