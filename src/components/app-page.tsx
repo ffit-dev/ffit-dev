@@ -20,7 +20,8 @@ export function PageComponent() {
             className="rounded-full shadow-lg object-cover"
           />
         </div>
-        <h1 className="text-4xl font-bold mb-4">Bugloper</h1>
+        <h1 className="text-4xl font-bold mb-4">bugloper</h1>
+        <h3 className="text-2xl font-bold mb-4">Be competent! 🦾</h3>
         <p className="text-xl text-muted-foreground mb-8">
           I am bugloper, an engineer who loves technologies.
         </p>
