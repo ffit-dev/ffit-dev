@@ -2,14 +2,44 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Linkedin, Mail } from "lucide-react"
+import { Linkedin, Mail, Folder } from "lucide-react"
 import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
 
 import { Button } from "@/components/ui/button"
 
+const tooltipStyle = `
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+`
+
 export function PageComponent() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-background to-secondary/10 p-4">
+      <style>{tooltipStyle}</style>
       <div className="text-center">
         <div className="relative w-64 h-64 mx-auto mb-8 transform rotate-6 hover:rotate-0 transition-transform duration-300">
           <Image
@@ -46,31 +76,53 @@ export function PageComponent() {
         </nav>
         <div className="flex justify-center space-x-4">
           <Link href="https://github.com/bugloper">
-            <Button variant="outline" size="icon">
-              <GitHubLogoIcon className="h-4 w-4" />
-              <span className="sr-only">GitHub</span>
-            </Button>
+            <div className="tooltip">
+              <Button variant="outline" size="icon">
+                <GitHubLogoIcon className="h-4 w-4" />
+                <span className="sr-only">GitHub</span>
+              </Button>
+              <span className="tooltiptext">GitHub</span>
+            </div>
           </Link>
 
           <Link href="https://www.linkedin.com/in/nima-yonten-a03995227/">
-            <Button variant="outline" size="icon">
-              <Linkedin className="h-4 w-4" />
-              <span className="sr-only">LinkedIn</span>
-            </Button>
+            <div className="tooltip">
+              <Button variant="outline" size="icon">
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </Button>
+              <span className="tooltiptext">LinkedIn</span>
+            </div>
           </Link>
 
           <Link href="mailto:bugloper@hey.com">
-            <Button variant="outline" size="icon">
-              <Mail className="h-4 w-4" />
-              <span className="sr-only">Email</span>
-            </Button>
+            <div className="tooltip">
+              <Button variant="outline" size="icon">
+                <Mail className="h-4 w-4" />
+                <span className="sr-only">Email</span>
+              </Button>
+              <span className="tooltiptext">Email</span>
+            </div>
           </Link>
 
           <Link href="https://x.com/bugloper">
-            <Button variant="outline" size="icon">
-              <TwitterLogoIcon className="h-4 w-4" />
-              <span className="sr-only">Twitter</span>
-            </Button>
+            <div className="tooltip">
+              <Button variant="outline" size="icon">
+                <TwitterLogoIcon className="h-4 w-4" />
+                <span className="sr-only">X</span>
+              </Button>
+              <span className="tooltiptext">X</span>
+            </div>
+          </Link>
+
+          <Link href="https://github.com/bugloper/.dotfiles">
+            <div className="tooltip">
+              <Button variant="outline" size="icon">
+                <Folder className="h-4 w-4" />
+                <span className="sr-only">Dotfiles</span>
+              </Button>
+              <span className="tooltiptext">Dotfiles</span>
+            </div>
           </Link>
         </div>
       </div>
