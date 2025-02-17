@@ -38,7 +38,7 @@ const tooltipStyle = `
 
 export function PageComponent() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-background to-secondary/10 p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#fffbf2] p-4">
       <style>{tooltipStyle}</style>
       <div className="text-center">
         <div className="relative w-64 h-64 mx-auto mb-8 transform rotate-6 hover:rotate-0 transition-transform duration-300">
